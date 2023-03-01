@@ -16,7 +16,7 @@
           </tr>
         </thead>
         <tbody>
-            @foreach ($projects as $item)
+            @forelse ($projects as $item)
             <tr>
               <td>{{$item->title}}</td>
               <td>{{$item->content}}</td>
@@ -45,7 +45,11 @@
                 </a>
               </td>
             </tr>
-            @endforeach
+            @empty
+            <div class="alert alert-primary" role="alert">
+                Nessuna progetto disponibile
+              </div>
+            @endforelse
         </tbody>
       </table>
 </div>
